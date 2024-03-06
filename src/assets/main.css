@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .item {
-    @apply mt-5 border;
-  }
+
+
+*,*::after,*::before{
+  /* border: 1px solid black; */
 }
