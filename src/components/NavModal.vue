@@ -1,36 +1,48 @@
 <template>
   <nav class="flex justify-between gap-2 p-2 bg-red-500 sm:flex-row sm:justify-normal">
-    <div class="p-3 bg-white w-fit">brand-logo</div>
-    <button onclick="dialog.showModal()" class="sm:hidden">
-      <svg viewBox="0 0 100 80" width="40" height="40">
-        <rect width="100" height="20"></rect>
-        <rect y="30" width="100" height="20"></rect>
-        <rect y="60" width="100" height="20"></rect>
-      </svg>
-    </button>
+    <div class="p-3 font-mono bg-white w-fit">brand-logo</div>
+    <div class="flex items-center justify-center space-x-1">
+      <button onclick="dialog.showModal()" class="sm:hidden">
+        <Bars3Icon class="p-1 text-black bg-white rounded-md size-10" />
+      </button>
+      <button
+        class="relative flex flex-row items-center justify-center gap-2 p-2 overflow-hidden transition-all duration-200 bg-white border rounded-lg group focus:overflow-visible w-max h-max border-zinc-200"
+      >
+        <LanguageIcon class="text-black bg-white rounded-md size-6" />
+        <div
+          class="absolute flex flex-col gap-2 p-2 bg-white border rounded-lg shadow-lg left-[-2rem] w-fit top-11 h-max border-zinc-200"
+        >
+          <p>
+            <label for="kurd">kurdish<input id="kurd" type="radio" /></label>
+          </p>
+          <p>
+            <label for="">kurdish<input type="radio" /></label>
+          </p>
+          <p>
+            <label for="">kurdish<input type="radio" /></label>
+          </p>
+        </div>
+      </button>
+    </div>
     <div class="hidden m-auto sm:block">
       <ul class="flex flex-row gap-5">
-        <li class="w-full p-2 pl-4 text-xl bg-white">item</li>
-        <li class="w-full p-2 pl-4 text-xl bg-white">item</li>
-        <li class="w-full p-2 pl-4 text-xl bg-white">item</li>
-        <li class="w-full p-2 pl-4 text-xl bg-white">item</li>
+        <li class="w-full p-2 pl-4 text-xl bg-white">{{ $t('message.home') }}</li>
+        <li class="w-full p-2 pl-4 text-xl bg-white">{{ $t('message.about') }}</li>
+        <li class="w-full p-2 pl-4 text-xl bg-white">{{ $t('message.project') }}</li>
+        <li class="w-full p-2 pl-4 text-xl bg-white">{{ $t('message.contact') }}</li>
       </ul>
     </div>
   </nav>
 
-  <dialog id="dialog" modal-mode="mega" class="w-full h-screen my-0 backdrop:bg-white">
+  <dialog id="dialog" class="w-full h-screen my-0 backdrop:bg-white">
     <ul class="flex flex-col items-center justify-center gap-5 bg-white">
       <button onclick="dialog.close()" class="flex justify-end w-full pt-3">
-        <svg viewBox="0 0 100 80" width="40" height="40">
-          <rect width="100" height="20"></rect>
-          <rect y="30" width="100" height="20"></rect>
-          <rect y="60" width="100" height="20"></rect>
-        </svg>
+        <XMarkIcon class="p-1 text-black bg-white rounded-md size-10" />
       </button>
-      <li class="w-full p-2 pl-4 text-xl">item</li>
-      <li class="w-full p-2 pl-4 text-xl">item</li>
-      <li class="w-full p-2 pl-4 text-xl">item</li>
-      <li class="w-full p-2 pl-4 text-xl">item</li>
+      <li class="w-full p-2 pl-4 text-xl">{{ $t('message.home') }}</li>
+      <li class="w-full p-2 pl-4 text-xl">{{ $t('message.about') }}</li>
+      <li class="w-full p-2 pl-4 text-xl">{{ $t('message.project') }}</li>
+      <li class="w-full p-2 pl-4 text-xl">{{ $t('message.contact') }}</li>
     </ul>
     <br />
     <br />
@@ -45,7 +57,9 @@
   </dialog>
 </template>
 
-<script setup></script>
+<script setup>
+import { XMarkIcon, Bars3Icon, LanguageIcon } from '@heroicons/vue/24/outline'
+</script>
 
 <style>
 @keyframes fadeIn {
