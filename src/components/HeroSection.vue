@@ -4,12 +4,12 @@
       <img
         src="../assets/image/webCover.jpg"
         alt="Image 1"
-        class="object-cover w-full h-full blur-sm"
+        class="object-cover w-full h-full "
       />
     </div>
-    <div class="z-10 col-start-1 col-end-1 row-start-1 row-end-1 p-5 m-auto border">
+    <div class="col-start-1 col-end-1 row-start-1 row-end-1 p-5 m-auto border">
       <h2 class="text-4xl font-bold text-center text-black">hi there</h2>
-      <p class="text-2xl text-center text-black w-96 word">
+      <p class="text-2xl text-center text-black word">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quisquam!
       </p>
     </div>
